@@ -1,0 +1,240 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 5000
+
+# Semua ditaruh rapat di sisi kiri dalam satu baris tanpa celah transparan.
+format = """
+[  ](bg:purple fg:dark0_hard bold)\
+$directory\
+$git_branch\
+$git_status\
+(\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$bun\
+$deno\
+$php\
+$java\
+$kotlin\
+$haskell\
+$lua\
+$ruby\
+$perl\
+$swift\
+$scala\
+$julia\
+$zig\
+$ocaml\
+$elixir\
+$erlang\
+$nim\
+$crystal\
+$dotnet\
+$dart\
+$python\
+$docker_context\
+)\
+$conda\
+$cmd_duration\
+$line_break\
+[└─❯](bold blue) """
+
+palette = 'gruvbox_dark_hard'
+
+[os]
+disabled = true 
+
+[directory]
+style = "bg:bg3 fg:fg0 bold"
+format = "[ $path ]($style)" 
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = " "
+style = "bg:yellow fg:dark0_hard bold"
+format = '[ $symbol$branch ]($style)'
+
+[git_status]
+style = "bg:yellow fg:dark0_hard bold"
+format = '[($all_status$ahead_behind )]($style)'
+
+# --- BLOCK BAHASA PEMROGRAMAN SOLID (DENGAN PADDING) ---
+
+[c]
+symbol = " "
+style = "bg:bg1 fg:green bold"
+format = "[ $symbol$version ]($style)"
+
+[cpp]
+symbol = " "
+style = "bg:bg1 fg:green bold"
+format = "[ $symbol$version ]($style)"
+
+[rust]
+symbol = " "
+style = "bg:bg1 fg:orange bold"
+format = "[ $symbol$version ]($style)"
+
+[golang]
+symbol = " "
+style = "bg:bg1 fg:aqua bold"
+format = "[ $symbol$version ]($style)"
+
+[nodejs]
+symbol = " "
+style = "bg:bg1 fg:green bold"
+format = "[ $symbol$version ]($style)"
+
+[bun]
+symbol = " "
+style = "bg:bg1 fg:fg1 bold"
+format = "[ $symbol$version ]($style)"
+
+[deno]
+symbol = " "
+style = "bg:bg1 fg:fg0 bold"
+format = "[ $symbol$version ]($style)"
+
+[python]
+symbol = " "
+style = "bg:bg1 fg:yellow bold"
+format = "[ $symbol$version ]($style)"
+
+[dart]
+symbol = " "
+style = "bg:bg1 fg:blue bold"
+format = "[ $symbol$version ]($style)"
+
+[php]
+symbol = " "
+style = "bg:bg1 fg:purple bold"
+format = "[ $symbol$version ]($style)"
+
+[java]
+symbol = " "
+style = "bg:bg1 fg:red bold"
+format = "[ $symbol$version ]($style)"
+
+[kotlin]
+symbol = " "
+style = "bg:bg1 fg:purple bold"
+format = "[ $symbol$version ]($style)"
+
+[haskell]
+symbol = " "
+style = "bg:bg1 fg:purple bold"
+format = "[ $symbol$version ]($style)"
+
+[lua]
+symbol = " "
+style = "bg:bg1 fg:blue bold"
+format = "[ $symbol$version ]($style)"
+
+[ruby]
+symbol = " "
+style = "bg:bg1 fg:red bold"
+format = "[ $symbol$version ]($style)"
+
+[perl]
+symbol = " "
+style = "bg:bg1 fg:blue bold"
+format = "[ $symbol$version ]($style)"
+
+[swift]
+symbol = " "
+style = "bg:bg1 fg:orange bold"
+format = "[ $symbol$version ]($style)"
+
+[scala]
+symbol = " "
+style = "bg:bg1 fg:red bold"
+format = "[ $symbol$version ]($style)"
+
+[julia]
+symbol = " "
+style = "bg:bg1 fg:purple bold"
+format = "[ $symbol$version ]($style)"
+
+[zig]
+symbol = " "
+style = "bg:bg1 fg:yellow bold"
+format = "[ $symbol$version ]($style)"
+
+[ocaml]
+symbol = " "
+style = "bg:bg1 fg:orange bold"
+format = "[ $symbol$version ]($style)"
+
+[elixir]
+symbol = " "
+style = "bg:bg1 fg:purple bold"
+format = "[ $symbol$version ]($style)"
+
+[erlang]
+symbol = " "
+style = "bg:bg1 fg:red bold"
+format = "[ $symbol$version ]($style)"
+
+[nim]
+symbol = "󰆥 "
+style = "bg:bg1 fg:yellow bold"
+format = "[ $symbol$version ]($style)"
+
+[crystal]
+symbol = " "
+style = "bg:bg1 fg:fg0 bold"
+format = "[ $symbol$version ]($style)"
+
+[dotnet]
+symbol = "󰪮 "
+style = "bg:bg1 fg:purple bold"
+format = "[ $symbol$version ]($style)"
+
+[docker_context]
+symbol = " "
+style = "bg:bg1 fg:aqua bold"
+format = "[ $symbol$context ]($style)"
+
+[conda]
+symbol = " "
+style = "bg:bg1 fg:green bold"
+format = "[ $symbol$environment ]($style)"
+ignore_base = false
+
+[cmd_duration]
+show_milliseconds = false
+format = "[  $duration ](bg:bg1 fg:fg2)"
+disabled = false
+min_time_to_notify = 45000
+
+[line_break]
+disabled = false
+
+# --- GRUVBOX DARK HARD PALETTE ---
+[palettes.gruvbox_dark_hard]
+dark0_hard = "#1d2021" # Paling gelap (kontras tinggi)
+dark0      = "#282828"
+bg1        = "#3c3836" # Pengganti surface0
+bg2        = "#504945" 
+bg3        = "#665c54" # Pengganti surface1
+fg0        = "#fbf1c7" # teks utama terang
+fg1        = "#ebdbb2"
+fg2        = "#d5c4a1"
+red        = "#fb4934"
+green      = "#b8bb26"
+yellow     = "#fabd2f"
+blue       = "#83a598"
+purple     = "#d3869b"
+aqua       = "#8ec07c"
+orange     = "#fe8019"
