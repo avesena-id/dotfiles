@@ -1,0 +1,19 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["cpu", "memory", "clock"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "[{name}]"
+    },
+    "cpu": { "format": "CPU: {usage}% |" },
+    "memory": { "format": "RAM: {percentage}% |" },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}"
+    }
+}
